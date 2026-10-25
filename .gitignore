@@ -1,0 +1,25 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.env
+.env.*
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Potentially sensitive purchasing sample; include only when disclosure is approved.
+cleaned_achat_data.csv
+
+# Private purchasing data and generated outputs
+cleaned_achat_data.csv
+reference/*.ipynb
+.ipynb_checkpoints/
+model_comparison_holdout.csv
+model_comparison_rolling_origin.csv
+model_tuning_candidates.csv
+original_baseline.csv
