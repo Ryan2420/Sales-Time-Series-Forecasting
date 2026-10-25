@@ -16,6 +16,12 @@ A local-first purchasing analytics and monthly forecasting application with an i
 - Download forecast values, validation-tuned holdout comparisons, rolling-origin prediction details, and all hyperparameter-candidate scores as CSV files.
 - Keep source files unmodified; no paid API or cloud dependency is required.
 
+## Forecasting performance
+
+The original Gradio implementation recorded **13.12% WAPE** on the final six-month holdout when missing calendar months were filled with zero. In the updated modular pipeline, the restored Extra Trees configuration achieved **12.79% WAPE** when missing months were kept unknown. This is a lower observed score, but these two numbers use different missing-month policies, so they should not be presented as a strict like-for-like comparison.
+
+For a same-policy comparison on the same final six-month window, the updated pipeline achieved **11.71% WAPE with zero-fill enabled**, compared with **13.12%** for the original implementation. The updated pipeline also changes feature engineering and imputation, so this result reflects the overall pipeline changes rather than a change to the estimator alone. These are historical backtest results, not a guarantee of future accuracy. Always compare models on identical dates, target definitions, and missing-month policies.
+
 ## Windows setup
 
 Open PowerShell in this project directory:
